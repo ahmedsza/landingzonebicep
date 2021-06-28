@@ -1,0 +1,15 @@
+$RESOURCE_GROUP = "azmonrg"
+$APP_NAME = "myfunctionapp"
+$BICEP_FILE = "azmon.bicep"
+$LOCATION = "westeurope"
+$BICEP_VMFILE="mainvmcreate.bicep"
+
+# create a resource group
+az group create -n $RESOURCE_GROUP -l $LOCATION
+
+# deploy the bicep file directly
+az deployment group create --name mybicepdeployment --resource-group $RESOURCE_GROUP   --template-file $BICEP_FILE
+az deployment group create --name myvmdeployment --resource-group $RESOURCE_GROUP   --template-file $BICEP_VMFILE   --parameters parameters.json resourceGroupName=$RESOURCE_GROUP
+
+
+az group delete -g $RESOURCE_GROUP --yes

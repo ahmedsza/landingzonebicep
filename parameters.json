@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "resourceGroupName": {
+            "value": "prod"
+        },
+        "namePrefix": {
+            "value": "prod"
+        },
+        "vmazdevopsUsername": {
+            "value": "test_username"
+        },
+        "vmazdevopsPassword": {
+            "value": "$1test_password"
+        },
+        "vstsAccount": {
+            "value": "https://dev.azure.com/ORGNAME"
+        },
+        "personalAccessToken": {
+            "value": "PUTINPATHERE"
+        }
+    }
+}
